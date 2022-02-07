@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 class APIdataController extends GetxController {
   final APILink = 'https://www.gamerpower.com/api';
   List<dynamic>? giveawaysData = [];
+  List<dynamic>? giveawaystimedata = [];
+  bool sortToggle = false;
   var temp;
   var response;
 
@@ -48,10 +50,14 @@ class APIdataController extends GetxController {
     response = await Dio().get(APILink + "/giveaways");
     for (var i = 0; i < response.data.length; i++) {
       var temp = LiveGiveaways.fromJson(response.data[i]);
+
       // print(temp);
-      print(giveawaysData.runtimeType);
+      //print(giveawaysData.runtimeType);
       this.giveawaysData?.add(temp);
-      print(giveawaysData?[0].id);
+      var datetimetemp = DateTime.parse(giveawaysData?[i].publishedDate);
+      print(datetimetemp.day);
+      giveawaystimedata?.add(datetimetemp);
+      //print(giveawaysData?[0].id);
     }
   }
 }
