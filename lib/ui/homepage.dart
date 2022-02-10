@@ -25,10 +25,23 @@ class _HomePageState extends State<HomePage> {
     final apidatacontroller = Get.put(APIdataController());
     final uicontroller = Get.put(UIController());
     return Scaffold(
+      backgroundColor: Color(0xFF457B9D),
       appBar: AppBar(
+        //backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Color.fromARGB(255, 29, 53, 87),
+        //backgroundColor: Theme.of(context).primaryColor,
+
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Text(
+              "Zenith   🚀",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
             IconButton(
                 onPressed: () {
                   showDialog(

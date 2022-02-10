@@ -16,6 +16,7 @@ class APIdataController extends GetxController {
   @override
   void onInit() async {
     giveawaysData = [].obs;
+    giveawaystimedata = [].obs;
     await getalllivegiveaways();
     super.onInit();
   }
